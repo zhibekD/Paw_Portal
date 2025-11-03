@@ -28,6 +28,17 @@ Example use cases:
 - A donor contributes to a shelter, and their donation is tracked in the database.
 
 ---
+## 🧩 Entity–Relationship Diagram
+Below is the complete ER diagram for PawPortal:
+
+<img width="2000" height="2588" alt="petAdoption" src="https://github.com/user-attachments/assets/bfc392f4-286a-4262-8068-7ed11f39f85e" />
+
+Each entity and relationship reflects real-world shelter operations:
+- **Pet → hasMedicalRecord → performedMedicalTest**
+- **Donor → donates → Shelter**
+- **Adopter → adopt → Pet**, etc.
+
+---
 
 ## 🧱 Database Schema
 
