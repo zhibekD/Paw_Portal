@@ -1,6 +1,7 @@
 # **PawPortal - The Pet Adoption and Shelter Management System**
 
-This project focuses on pet adoption and shelter management, providing an efficient system for tracking adoptions, fostering, donations, and medical care for rescued animals. Shelters can register pets, schedule vet check-ups, manage adoption applications, and link donations to funding needs.
+**PawPortal** is a full-stack database-driven web application that simplifies the operations of animal shelters.  
+It provides an organized and efficient system for managing **pet adoptions, fostering, donations, and medical care** — helping shelters match pets with loving homes while maintaining clear and reliable records.
 
 <table align="center" cellspacing="0" cellpadding="0">
 <tr><td style="padding:0; margin:0; line-height:0;">
@@ -9,8 +10,48 @@ This project focuses on pet adoption and shelter management, providing an effici
 </td></tr>
 </table>
 
+> 💻 The live PHP web app is hosted on UBC CS servers and accessible only to enrolled students and instructors.
 
+## 🧩 Overview
 
+**Goal:** To design and implement a complete shelter management system that connects all aspects of pet care — from rescue to adoption — within one cohesive platform.  
 
-## ER Diagram Pet Adoption & Shelter Management
-<img width="2000" height="2588" alt="petAdoption" src="https://github.com/user-attachments/assets/bfc392f4-286a-4262-8068-7ed11f39f85e" />
+The system supports:
+- 🐶 Pet registration with breed, species, and medical records  
+- 🏠 Adoption and foster management with application tracking  
+- 💰 Donation logging and donor information tracking  
+- 👩‍⚕️ Veterinarian, medical testing, and vaccination history  
+- 👩‍💼 Staff and shelter data management  
+
+It’s designed to be scalable, relational, and user-friendly — enabling real-world shelter operations to be handled in one place.
+
+---
+## ⚙️ Features
+
+- **Comprehensive pet database:** Store, update, and track animal details
+- **Adoption management:** Handle applications, fees, and adopter details
+- **Foster assignments:** Match foster parents with suitable pets
+- **Donation tracking:** Record donor contributions to shelters
+- **Medical tracking:** Log veterinary tests and vaccination history
+- **Data integrity:** Built with strong referential constraints and cascading updates/deletes
+- **User feedback:** Clear success and error messages for each operation
+- **Interactive UI:** Simple PHP-based web interface styled with CSS
+---
+
+## 🧠 Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| **Database** | Oracle SQL |
+| **Back-End** | PHP |
+| **Front-End** | HTML + CSS |
+
+---
+## 💾 Example SQL Query
+
+```sql
+SELECT A.aName AS Adopter, P.pName AS Pet, adoptionDate
+FROM Adopter A
+JOIN Adopt D ON A.aid = D.aid
+JOIN Adopted_Pet P ON D.pid = P.pid
+ORDER BY adoptionDate DESC;
